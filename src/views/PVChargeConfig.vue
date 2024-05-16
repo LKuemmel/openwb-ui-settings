@@ -286,7 +286,7 @@
 							Einstellung genutzt wird, um den verfügbaren
 							Überschuss in die Fahrzeuge zu laden. Voraussetzung
 							ist die verbaute Umschaltmöglichkeit zwischen einer
-							und drei Phasen (s.g. 1p3p).
+							und mehreren Phasen (s.g. 1p3p).
 						</template>
 					</openwb-base-button-group-input>
 					<openwb-base-range-input
@@ -322,7 +322,10 @@
 							das Intervall für die Umschaltung erneut. Ist die
 							Ladung im mehrphasigen Modus für 16 - x Minuten auf
 							der Minimalstromstärke, wird wieder auf einphasige
-							Ladung gewechselt.
+							Ladung gewechselt.<br />
+							Ist ausreichend Überschuss vorhanden, wird beim
+							Ladestart die Umschaltverzögerung nicht abgewartet,
+							sondern direkt mit mehrphasiger Ladung begonnen.
 						</template>
 					</openwb-base-range-input>
 				</div>
