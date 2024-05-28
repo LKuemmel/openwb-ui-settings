@@ -1509,8 +1509,8 @@
 								Ist der berechnete Zeitpunkt des Ladestarts noch
 								nicht erreicht, wird mit Überschuss geladen.
 								Auch nach Erreichen des Ziel-SoCs wird mit
-								Überschuss geladen, solange bis das "SoC-Limit für das Fahrzeug"
-								erreicht wird.<br />
+								Überschuss geladen, solange bis das "SoC-Limit
+								für das Fahrzeug" erreicht wird.<br />
 								Kann der Ziel-SoC bzw. die Energiemenge NICHT
 								erreicht werden, z.B. weil das Auto zu spät
 								angesteckt wurde oder das Lastmanagement
@@ -1683,7 +1683,10 @@
 							<openwb-base-button-group-input
 								title="Ziel"
 								:buttons="[
-									{ buttonValue: 'soc', text: 'Fahrzeug-SoC' },
+									{
+										buttonValue: 'soc',
+										text: 'Fahrzeug-SoC',
+									},
 									{
 										buttonValue: 'amount',
 										text: 'Energie',
@@ -1742,8 +1745,8 @@
 							>
 								<template #help>
 									Nach Erreichen des Ziel-SoCs wird mit
-									Überschuss weiter geladen, bis das SoC-Limit für das Fahrzeug
-									erreicht wird.
+									Überschuss weiter geladen, bis das SoC-Limit
+									für das Fahrzeug erreicht wird.
 								</template>
 							</openwb-base-range-input>
 							<openwb-base-number-input
@@ -2031,7 +2034,10 @@
 								title="Ziel"
 								:buttons="[
 									{ buttonValue: 'none', text: 'Aus' },
-									{ buttonValue: 'soc', text: 'Fahrzeug-SoC' },
+									{
+										buttonValue: 'soc',
+										text: 'Fahrzeug-SoC',
+									},
 									{
 										buttonValue: 'amount',
 										text: 'Energie',
