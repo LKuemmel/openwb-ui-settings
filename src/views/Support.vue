@@ -83,9 +83,10 @@
 							required
 							subtype="email"
 							v-model="sendDebugData.email"
-							>
+						>
 							<template #help>
-								Deine E-Mail-Adresse, an die der Support Dir antwortet.
+								Deine E-Mail-Adresse, an die der Support Dir
+								antwortet.
 							</template>
 						</openwb-base-text-input>
 						<openwb-base-text-input
