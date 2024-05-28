@@ -1067,8 +1067,10 @@
 							Nach einer Änderung ist ein Neustart
 							erforderlich!<br />
 							Diese Einstellung erfordert ein Raspberry Pi
-							Display. Anzeigen, welche über HDMI angeschlossen
-							sind, werden nicht unterstützt.
+							Display. Für eine openWB series2 mit integriertem
+							Display muss 0° ausgewählt werden, für eine
+							Standalone mit Display 180°. Anzeigen, welche über
+							HDMI angeschlossen sind, werden nicht unterstützt.
 						</template>
 					</openwb-base-button-group-input>
 					<hr />
