@@ -824,6 +824,10 @@ export default {
 		uploadFile(target, selectedFile, successMessage) {
 			return new Promise((resolve) => {
 				if (selectedFile !== undefined) {
+					this.$root.postClientMessage(
+						"Hochladen der Datei gestartet.",
+						"info",
+					);
 					let formData = new FormData();
 					formData.append("file", selectedFile);
 					formData.append("target", target);
