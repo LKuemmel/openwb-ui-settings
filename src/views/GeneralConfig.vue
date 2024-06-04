@@ -249,7 +249,6 @@
 							</ul>
 						</template>
 					</openwb-base-button-group-input> -->
-				</div>
 				<hr />
 				<openwb-base-heading class="mt-0">
 					Steuerbare Verbrauchseinrichtung
@@ -305,6 +304,7 @@
 						"
 					/>
 				</div>
+			</div>
 			</openwb-base-card>
 			<!-- <openwb-base-card title="Benachrichtigungen">
 				<div v-if="$store.state.mqtt['openWB/general/extern'] === true">
