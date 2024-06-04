@@ -1077,7 +1077,7 @@
 							</template>
 						</openwb-base-button-group-input>
 						<openwb-base-button-group-input
-							title="Standard nach Abstecken"
+							title="Standard-Fahrzeug nach Abstecken"
 							:buttons="[
 								{
 									buttonValue: false,
