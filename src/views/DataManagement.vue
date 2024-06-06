@@ -43,7 +43,10 @@
 						erstellte Datei über den Link in der Benachrichtigung
 						oder
 						<a href="/openWB/data/backup/" target="_blank">hier</a>
-						heruntergeladen werden.
+						heruntergeladen werden. Beim Herunterladen bitte darauf
+						achten, dass die Datei mit der Endung .tar.gz
+						gespeichert wird. Ggf das automatische Entpacken des
+						Browsers deaktivieren.
 					</openwb-base-alert>
 					<div class="row justify-content-center">
 						<div
