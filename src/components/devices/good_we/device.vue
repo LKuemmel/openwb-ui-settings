@@ -5,9 +5,9 @@
 			<span class="small">(Modul: {{ $options.name }})</span>
 		</openwb-base-heading>
 		<openwb-base-alert subtype="info">
-			GoodWe-Wechselrichter verfügen über 2 Dongel: WiFi und Wifi/Lan. Die
-			Einbindung über dieses Modul ist nur mit dem Wifi/Lan-Dongle
-			möglich.
+			GoodWe-Wechselrichter können mit zwei verschiedenen Dongeln ausgestattet werden:
+			WiFi und Wifi/Lan. Die Einbindung über dieses Modul ist nur mit dem
+			Wifi/Lan-Dongle möglich.
 		</openwb-base-alert>
 		<openwb-base-text-input
 			title="IP oder Hostname"

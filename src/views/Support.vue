@@ -86,7 +86,7 @@
 						>
 							<template #help>
 								Deine E-Mail-Adresse, an die der Support Dir
-								antwortet.
+								antworten soll.
 							</template>
 						</openwb-base-text-input>
 						<openwb-base-text-input
