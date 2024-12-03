@@ -219,12 +219,13 @@
             <template #help>
               Wenn das Entladen des Speichers immer erlaubt ist, wird das Fahrzeug aus dem Speicher geladen anstatt
               Strom aus dem Netz zu beziehen. <br />
-              Im Modus "gesperrt, wenn Fahrzeug lädt", wird die Entladung nur zugelassen, wenn alle Fahrzeuge im Modus
-              PV-Laden ohne Mindeststrom oder Zielladen mit PV-Überschuss laden.<br />
-              Wenn das Entladen des Speichers auf den Hausverbrauch begrenzt ist und mindestens Fahrzeuge nicht im Modus
-              PV-Laden ohne Mindeststrom oder Zielladen lädt, wird die Entladung des Speichers in Höhe des
-              Hausverbrauchs zugelassen. Kann die Entladung am Speicher nur komplett gesperrt werden, verhält sich diese
-              Einstellung wie "gesperrt, wenn Fahrzeug lädt".<br />
+              Im Modus "gesperrt, wenn Fahrzeug lädt" wird die Entladung nur zugelassen, wenn alle Fahrzeuge
+              ausschließlich mit PV-Überschuss laden, da der Speicher dann nicht für die Fahrzeug-Ladung verwendet
+              wird.<br />
+              Wenn das Entladen des Speichers auf den Hausverbrauch begrenzt ist und nicht alle Fahrzeuge ausschließlich
+              mit Überschuss laden, wird die Entladung des Speichers in Höhe des Hausverbrauchs zugelassen. Für die
+              Fahrzeug-Ladung wird dann Netzstrom verwendet. Kann die Entladung am Speicher nur komplett gesperrt
+              werden, verhält sich diese Einstellung wie "gesperrt, wenn Fahrzeug lädt".<br />
               Diese Einstellung übersteuert ggf die Einstellungen zur Speicher-Beachtung im Modus PV-Laden.
             </template>
           </openwb-base-button-group-input>
