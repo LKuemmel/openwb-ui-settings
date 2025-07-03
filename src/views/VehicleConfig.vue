@@ -1466,16 +1466,6 @@
               </template>
             </openwb-base-button-group-input>
             <hr />
-            <openwb-base-number-input
-              title="Ladeleistung"
-              :min="0.1"
-              :max="22"
-              :step="0.1"
-              unit="kW"
-              :model-value="template.chargemode.bidi_charging.power / 1000"
-              @update:model-value="updateState(templateKey, $event * 1000, 'chargemode.bidi_charging.power')"
-            >
-            </openwb-base-number-input>
             <hr />
             <openwb-base-heading>
               Ziel
