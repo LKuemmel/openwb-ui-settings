@@ -1,0 +1,47 @@
+name: Lint and Format on PR Merge
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    strategy:
+      matrix:
+        node: [ 22, 24 ]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        ref: main
+        
+    - name: Use Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node }}
+        cache: 'npm'
+        
+    - run: npm ci
+    
+    - name: Run lint --fix
+      run: npm run lint -- --fix
+
+    - name: Commit and push changes
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        
+        git add .
+        
+        if ! git diff --cached --quiet; then
+          git commit -m "Auto-fix linting issues after PR merge"
+          git push
+        else
+          echo "No changes to commit."
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
