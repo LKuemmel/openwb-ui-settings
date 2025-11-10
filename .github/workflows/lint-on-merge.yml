@@ -21,14 +21,21 @@ jobs:
         node-version: 22
         cache: 'npm'
         
-    - run: npm ci
+    - name: Install dependencies
+      run: npm ci
+      working-directory: .
     
     - name: Run lint --fix
-      run: npm run lint -- --fix
+      run: |
+        pwd
+        ls -la
+        npm run lint -- --fix
+      working-directory: .
 
     - name: Check for changes
       id: verify-changed-files
       run: |
+        pwd
         git status --porcelain
         if [ -n "$(git status --porcelain)" ]; then
           echo "changed=true" >> $GITHUB_OUTPUT
@@ -37,6 +44,7 @@ jobs:
           echo "changed=false" >> $GITHUB_OUTPUT
           echo "No files were changed by linting"
         fi
+      working-directory: .
 
     - name: Commit and push changes
       if: steps.verify-changed-files.outputs.changed == 'true'
