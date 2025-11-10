@@ -8,10 +8,6 @@ jobs:
   lint-and-format:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
-    strategy:
-      matrix:
-        node: [ 22, 24 ]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     
     steps:
     - uses: actions/checkout@v4
@@ -19,10 +15,10 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         ref: main
         
-    - name: Use Node.js ${{ matrix.node }}
+    - name: Use Node.js 22
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node }}
+        node-version: 22
         cache: 'npm'
         
     - run: npm ci
@@ -30,18 +26,25 @@ jobs:
     - name: Run lint --fix
       run: npm run lint -- --fix
 
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        git status --porcelain
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+          echo "Files have been changed by linting"
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+          echo "No files were changed by linting"
+        fi
+
     - name: Commit and push changes
+      if: steps.verify-changed-files.outputs.changed == 'true'
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        
         git add .
-        
-        if ! git diff --cached --quiet; then
-          git commit -m "Auto-fix linting issues after PR merge"
-          git push
-        else
-          echo "No changes to commit."
-        fi
+        git commit -m "Auto-fix linting issues after PR merge"
+        git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
