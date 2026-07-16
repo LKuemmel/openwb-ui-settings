@@ -44,7 +44,7 @@
     </template>
   </openwb-base-button-group-input>
   <openwb-base-select-input
-    v-if="ioAction.configuration.passthrough_enabled && outputIoDevice"
+    v-if="ioAction.configuration.passthrough_enabled"
     title="Ausgangs-Gerät"
     not-selected="Bitte auswählen"
     :empty-value="null"
